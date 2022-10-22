@@ -1,0 +1,35 @@
+{% extends 'core/home.html' %}
+
+{% block content %}
+    <div>
+       
+        <main role="main" class="container">
+            <div class="jumbotron">
+                <h1>all the list</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Item_name</th>
+                            <th>IN Stock qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for list in lists %}
+                        <tr>
+                            <td>{{list.category}}</td>
+                            <td>{{list.item_name}}</td>
+                            <td>{{list.qyt}}</td>
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+             
+            </div>
+        </main>
+    </div>
+        
+        
+        
+{% endblock content %}
+    
