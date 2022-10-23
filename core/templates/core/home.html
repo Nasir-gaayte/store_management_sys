@@ -66,9 +66,15 @@
       <li class="nav-item">
         {% comment %} <a class="nav-link" href="{% url 'add_itme' %}">Add Item</a> {% endcomment %}
       </li>
+      {% if user.is_authenticated %}
       <li class="nav-item">
-        <a class="nav-link disabled">Disabled</a>
+        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
       </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'login' %}">Login</a>
+      </li>
+      {% endif %}
     </ul>
     <form class="form-inline mt-2 mt-md-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -80,9 +86,9 @@
 
 <main role="main" class="container">
     <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser’s viewport.</p>
-        <a class="btn btn-lg btn-primary" href="/docs/4.6/components/navbar/" role="button">View navbar docs &raquo;</a>
+        <h1>This is the stock.m.s</h1>
+        <p class="lead">have some skills on bootstrap it make your jop so easy  in the word of developer </p>
+        <a class="btn btn-lg btn-primary" href="/docs/4.6/components/navbar/" role="button">Django is the love of my life <br> see way...&raquo;</a>
     </div>
 </main>
 

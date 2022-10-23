@@ -2,7 +2,8 @@ from urllib import request
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from .models import StockModel
-from .forms import StockAddForm, StockForm
+from .forms import  StockForm
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 class Baseview(TemplateView):
@@ -20,19 +21,19 @@ def home (request):
 
 
 
-
+@login_required
 def list_item(request):
     lists = StockModel.objects.all()
     return render(request,'core/list_item.html',{'lists':lists})
 
 
-
+@login_required
 def add_item(request):
     if request.method == "POST":
-        form = StockAddForm(data=request.POST)
+        form = StockForm(data=request.POST)
         if form.is_valid():
             form.save()
             return redirect ('list_item')
-    form = StockAddForm()
+    form = StockForm()
     return render(request,'core/add_item.html',{'form':form})    
         

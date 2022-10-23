@@ -1,8 +1,14 @@
+{% extends 'core/home.html' %}
 
-<div class="container">
-    <form method="POST">
+{% block content %}
+    
+
+<div class="container mt-5">
+    <form method="POST" class="form-group">
         {% csrf_token %}
         {{form.as_p}}
-        <button type="submit">singin</button>
+        <button class="btn btn-primary" type="submit">singin</button>
     </form>
+    <h4>To registed cleck <a href="{% url 'register' %}">HERE...</a></h4>
 </div>
+{% endblock content %}

@@ -1,12 +1,12 @@
 {% extends 'core/home.html' %}
 
 {% block content %}
-    <div>
+    <div class="mt-5">
         <h1>ADD ITEMS</h1>
-        <form method="POST">
+        <form method="POST" class="form-group">
             {% csrf_token %}
-            {{form.as_p}}
-            <button type="submit">Add</button>
+            {{form}}
+            <button class="btn btn-primary" type="submit">Add</button>
         </form>
     </div>
 {% endblock content %}

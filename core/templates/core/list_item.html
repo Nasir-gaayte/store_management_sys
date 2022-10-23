@@ -6,17 +6,19 @@
         <main role="main" class="container">
             <div class="jumbotron">
                 <h1>all the list</h1>
-                <table>
+                <table class="table">
                     <thead>
                         <tr>
-                            <th>Category</th>
-                            <th>Item_name</th>
-                            <th>IN Stock qty</th>
+                            <th scope="col">#</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Item_name</th>
+                            <th scope="col">IN Stock qty</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for list in lists %}
                         <tr>
+                            <th scope="row">{{forloop.counter}}</th>
                             <td>{{list.category}}</td>
                             <td>{{list.item_name}}</td>
                             <td>{{list.qyt}}</td>

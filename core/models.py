@@ -1,11 +1,10 @@
-from contextlib import nullcontext
-from operator import mod
 from django.db import models
 
 # Create your models here.
 
 
 class StockModel(models.Model):
+    
     category= models.CharField(max_length=50, blank=True, null=True)
     item_name = models.CharField(max_length=50, blank=True, null=True)  
     qty =models.IntegerField(default='0', blank=True, null=True)
@@ -21,7 +20,7 @@ class StockModel(models.Model):
     export_to_csv = models.BooleanField(default=False)
     
 # 'catigory' , 'item_name', 'qty' , 'in_stock_qty', ' in_stock_by', ' issue_qty' , ' issue_by' , ' issue_to' , ' phone_namber' ,
-# ' created_by', ' reorder_level' , ' last_updated' , ' export_to_csv'    
+# ' created_by', ' reorder_level' , ' export_to_csv'    
     
     
     def __str__(self):
